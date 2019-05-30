@@ -49,7 +49,28 @@
             this.lblNewProjectName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbpInstall = new System.Windows.Forms.TabPage();
-            this.installVisualStudioControl2 = new MonoGameHub.Controls.InstallVisualStudioControl();
+            this.pnlInstallMonoGame = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnInstallMonoGame = new System.Windows.Forms.Button();
+            this.lblInstallMonoGameMessage = new System.Windows.Forms.Label();
+            this.lblInstallMonoGameHeader = new System.Windows.Forms.Label();
+            this.pnlInstallMonoGameActive = new System.Windows.Forms.Panel();
+            this.pnlDownloadMonoGame = new System.Windows.Forms.Panel();
+            this.lblDownloadMonoGamePercentage = new System.Windows.Forms.Label();
+            this.pgbDownloadMonoGame = new System.Windows.Forms.ProgressBar();
+            this.pnlDownloadMonoGameMid = new System.Windows.Forms.Panel();
+            this.btnDownloaMonoGame = new System.Windows.Forms.Button();
+            this.lblDownloaMonoGameMessage = new System.Windows.Forms.Label();
+            this.lblDownloadMonoGameHeader = new System.Windows.Forms.Label();
+            this.pnlDownloadMonoGameActive = new System.Windows.Forms.Panel();
+            this.pnlVisualStudioVerifier = new System.Windows.Forms.Panel();
+            this.lblVisualStudioDownload = new System.Windows.Forms.LinkLabel();
+            this.lblVisualStudioVerified = new System.Windows.Forms.Label();
+            this.pnlVerifyVisualStudioMid = new System.Windows.Forms.Panel();
+            this.btnVerifyVisualStudio = new System.Windows.Forms.Button();
+            this.lblVisualStudioVerifierMessage = new System.Windows.Forms.Label();
+            this.lblVisualStudioVerifierHeader = new System.Windows.Forms.Label();
+            this.pnlVisualStudioVeriferActive = new System.Windows.Forms.Panel();
             this.lblInstallHeader = new System.Windows.Forms.Label();
             this.tbpProjects = new System.Windows.Forms.TabPage();
             this.lblInstallMessage = new System.Windows.Forms.Label();
@@ -68,6 +89,12 @@
             this.pnlNewInfo2.SuspendLayout();
             this.pnlNewInfo1.SuspendLayout();
             this.tbpInstall.SuspendLayout();
+            this.pnlInstallMonoGame.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.pnlDownloadMonoGame.SuspendLayout();
+            this.pnlDownloadMonoGameMid.SuspendLayout();
+            this.pnlVisualStudioVerifier.SuspendLayout();
+            this.pnlVerifyVisualStudioMid.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +108,7 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(980, 84);
+            this.pnlTop.Size = new System.Drawing.Size(938, 84);
             this.pnlTop.TabIndex = 0;
             // 
             // lblHub
@@ -116,7 +143,7 @@
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavigation.Location = new System.Drawing.Point(0, 84);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(200, 454);
+            this.pnNavigation.Size = new System.Drawing.Size(200, 419);
             this.pnNavigation.TabIndex = 1;
             // 
             // btnInstall
@@ -128,7 +155,7 @@
             this.btnInstall.Name = "btnInstall";
             this.btnInstall.Size = new System.Drawing.Size(198, 55);
             this.btnInstall.TabIndex = 2;
-            this.btnInstall.Text = "Install MonoGame";
+            this.btnInstall.Text = "Install";
             this.btnInstall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInstall.UseVisualStyleBackColor = true;
             this.btnInstall.Click += new System.EventHandler(this.btnInstall_Click);
@@ -172,7 +199,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(778, 452);
+            this.tabControl1.Size = new System.Drawing.Size(736, 417);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
@@ -185,7 +212,7 @@
             this.tbpNew.Location = new System.Drawing.Point(4, 5);
             this.tbpNew.Name = "tbpNew";
             this.tbpNew.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNew.Size = new System.Drawing.Size(770, 443);
+            this.tbpNew.Size = new System.Drawing.Size(728, 408);
             this.tbpNew.TabIndex = 0;
             this.tbpNew.Text = "New";
             this.tbpNew.UseVisualStyleBackColor = true;
@@ -217,7 +244,7 @@
             this.pnlNewInfo2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNewInfo2.Location = new System.Drawing.Point(3, 120);
             this.pnlNewInfo2.Name = "pnlNewInfo2";
-            this.pnlNewInfo2.Size = new System.Drawing.Size(764, 100);
+            this.pnlNewInfo2.Size = new System.Drawing.Size(722, 100);
             this.pnlNewInfo2.TabIndex = 1;
             // 
             // comboBox1
@@ -248,7 +275,7 @@
             this.pnlNewInfo1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNewInfo1.Location = new System.Drawing.Point(3, 3);
             this.pnlNewInfo1.Name = "pnlNewInfo1";
-            this.pnlNewInfo1.Size = new System.Drawing.Size(764, 117);
+            this.pnlNewInfo1.Size = new System.Drawing.Size(722, 117);
             this.pnlNewInfo1.TabIndex = 0;
             // 
             // lblNewSolutionName
@@ -301,35 +328,285 @@
             // 
             // tbpInstall
             // 
-            this.tbpInstall.Controls.Add(this.installVisualStudioControl2);
+            this.tbpInstall.Controls.Add(this.pnlInstallMonoGame);
+            this.tbpInstall.Controls.Add(this.pnlDownloadMonoGame);
+            this.tbpInstall.Controls.Add(this.pnlVisualStudioVerifier);
             this.tbpInstall.Controls.Add(this.lblInstallHeader);
             this.tbpInstall.Location = new System.Drawing.Point(4, 5);
             this.tbpInstall.Name = "tbpInstall";
             this.tbpInstall.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpInstall.Size = new System.Drawing.Size(770, 443);
+            this.tbpInstall.Size = new System.Drawing.Size(728, 408);
             this.tbpInstall.TabIndex = 1;
             this.tbpInstall.Text = "Install";
             this.tbpInstall.UseVisualStyleBackColor = true;
             // 
-            // installVisualStudioControl2
+            // pnlInstallMonoGame
             // 
-            this.installVisualStudioControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.installVisualStudioControl2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.installVisualStudioControl2.Location = new System.Drawing.Point(3, 51);
-            this.installVisualStudioControl2.MinimumSize = new System.Drawing.Size(2, 80);
-            this.installVisualStudioControl2.Name = "installVisualStudioControl2";
-            this.installVisualStudioControl2.Size = new System.Drawing.Size(764, 80);
-            this.installVisualStudioControl2.TabIndex = 0;
-            this.installVisualStudioControl2.OnVerified += new System.EventHandler(this.installVisualStudioControl2_OnVerified);
+            this.pnlInstallMonoGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInstallMonoGame.Controls.Add(this.panel4);
+            this.pnlInstallMonoGame.Controls.Add(this.lblInstallMonoGameMessage);
+            this.pnlInstallMonoGame.Controls.Add(this.lblInstallMonoGameHeader);
+            this.pnlInstallMonoGame.Controls.Add(this.pnlInstallMonoGameActive);
+            this.pnlInstallMonoGame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInstallMonoGame.Enabled = false;
+            this.pnlInstallMonoGame.Location = new System.Drawing.Point(497, 68);
+            this.pnlInstallMonoGame.Name = "pnlInstallMonoGame";
+            this.pnlInstallMonoGame.Size = new System.Drawing.Size(228, 337);
+            this.pnlInstallMonoGame.TabIndex = 6;
+            this.pnlInstallMonoGame.Enter += new System.EventHandler(this.pnlInstallMonoGame_Enter);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnInstallMonoGame);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 110);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(226, 100);
+            this.panel4.TabIndex = 4;
+            // 
+            // btnInstallMonoGame
+            // 
+            this.btnInstallMonoGame.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInstallMonoGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInstallMonoGame.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstallMonoGame.Location = new System.Drawing.Point(47, 36);
+            this.btnInstallMonoGame.Name = "btnInstallMonoGame";
+            this.btnInstallMonoGame.Size = new System.Drawing.Size(125, 38);
+            this.btnInstallMonoGame.TabIndex = 3;
+            this.btnInstallMonoGame.Text = "Install";
+            this.btnInstallMonoGame.UseVisualStyleBackColor = true;
+            this.btnInstallMonoGame.Click += new System.EventHandler(this.btnInstallMonoGame_Click);
+            // 
+            // lblInstallMonoGameMessage
+            // 
+            this.lblInstallMonoGameMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblInstallMonoGameMessage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstallMonoGameMessage.Location = new System.Drawing.Point(0, 32);
+            this.lblInstallMonoGameMessage.Name = "lblInstallMonoGameMessage";
+            this.lblInstallMonoGameMessage.Size = new System.Drawing.Size(226, 78);
+            this.lblInstallMonoGameMessage.TabIndex = 2;
+            this.lblInstallMonoGameMessage.Text = "Click below to begin installing the MonoGame SDK";
+            this.lblInstallMonoGameMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblInstallMonoGameHeader
+            // 
+            this.lblInstallMonoGameHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblInstallMonoGameHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstallMonoGameHeader.Location = new System.Drawing.Point(0, 5);
+            this.lblInstallMonoGameHeader.Name = "lblInstallMonoGameHeader";
+            this.lblInstallMonoGameHeader.Size = new System.Drawing.Size(226, 27);
+            this.lblInstallMonoGameHeader.TabIndex = 1;
+            this.lblInstallMonoGameHeader.Text = "Install MonoGame";
+            this.lblInstallMonoGameHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlInstallMonoGameActive
+            // 
+            this.pnlInstallMonoGameActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.pnlInstallMonoGameActive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlInstallMonoGameActive.Location = new System.Drawing.Point(0, 0);
+            this.pnlInstallMonoGameActive.MaximumSize = new System.Drawing.Size(0, 5);
+            this.pnlInstallMonoGameActive.MinimumSize = new System.Drawing.Size(0, 5);
+            this.pnlInstallMonoGameActive.Name = "pnlInstallMonoGameActive";
+            this.pnlInstallMonoGameActive.Size = new System.Drawing.Size(226, 5);
+            this.pnlInstallMonoGameActive.TabIndex = 0;
+            // 
+            // pnlDownloadMonoGame
+            // 
+            this.pnlDownloadMonoGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDownloadMonoGame.Controls.Add(this.lblDownloadMonoGamePercentage);
+            this.pnlDownloadMonoGame.Controls.Add(this.pgbDownloadMonoGame);
+            this.pnlDownloadMonoGame.Controls.Add(this.pnlDownloadMonoGameMid);
+            this.pnlDownloadMonoGame.Controls.Add(this.lblDownloaMonoGameMessage);
+            this.pnlDownloadMonoGame.Controls.Add(this.lblDownloadMonoGameHeader);
+            this.pnlDownloadMonoGame.Controls.Add(this.pnlDownloadMonoGameActive);
+            this.pnlDownloadMonoGame.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDownloadMonoGame.Enabled = false;
+            this.pnlDownloadMonoGame.Location = new System.Drawing.Point(250, 68);
+            this.pnlDownloadMonoGame.Name = "pnlDownloadMonoGame";
+            this.pnlDownloadMonoGame.Size = new System.Drawing.Size(247, 337);
+            this.pnlDownloadMonoGame.TabIndex = 5;
+            this.pnlDownloadMonoGame.EnabledChanged += new System.EventHandler(this.pnlDownloadMonoGame_EnabledChanged);
+            // 
+            // lblDownloadMonoGamePercentage
+            // 
+            this.lblDownloadMonoGamePercentage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDownloadMonoGamePercentage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDownloadMonoGamePercentage.Location = new System.Drawing.Point(0, 233);
+            this.lblDownloadMonoGamePercentage.Name = "lblDownloadMonoGamePercentage";
+            this.lblDownloadMonoGamePercentage.Size = new System.Drawing.Size(245, 29);
+            this.lblDownloadMonoGamePercentage.TabIndex = 6;
+            this.lblDownloadMonoGamePercentage.Text = "0/0 (0%)";
+            this.lblDownloadMonoGamePercentage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pgbDownloadMonoGame
+            // 
+            this.pgbDownloadMonoGame.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pgbDownloadMonoGame.Location = new System.Drawing.Point(0, 210);
+            this.pgbDownloadMonoGame.Name = "pgbDownloadMonoGame";
+            this.pgbDownloadMonoGame.Size = new System.Drawing.Size(245, 23);
+            this.pgbDownloadMonoGame.TabIndex = 5;
+            // 
+            // pnlDownloadMonoGameMid
+            // 
+            this.pnlDownloadMonoGameMid.Controls.Add(this.btnDownloaMonoGame);
+            this.pnlDownloadMonoGameMid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDownloadMonoGameMid.Location = new System.Drawing.Point(0, 110);
+            this.pnlDownloadMonoGameMid.Name = "pnlDownloadMonoGameMid";
+            this.pnlDownloadMonoGameMid.Size = new System.Drawing.Size(245, 100);
+            this.pnlDownloadMonoGameMid.TabIndex = 4;
+            // 
+            // btnDownloaMonoGame
+            // 
+            this.btnDownloaMonoGame.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDownloaMonoGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownloaMonoGame.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownloaMonoGame.Location = new System.Drawing.Point(56, 36);
+            this.btnDownloaMonoGame.Name = "btnDownloaMonoGame";
+            this.btnDownloaMonoGame.Size = new System.Drawing.Size(125, 38);
+            this.btnDownloaMonoGame.TabIndex = 3;
+            this.btnDownloaMonoGame.Text = "Begin Download";
+            this.btnDownloaMonoGame.UseVisualStyleBackColor = true;
+            this.btnDownloaMonoGame.Click += new System.EventHandler(this.btnDownloaMonoGame_Click);
+            // 
+            // lblDownloaMonoGameMessage
+            // 
+            this.lblDownloaMonoGameMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDownloaMonoGameMessage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDownloaMonoGameMessage.Location = new System.Drawing.Point(0, 32);
+            this.lblDownloaMonoGameMessage.Name = "lblDownloaMonoGameMessage";
+            this.lblDownloaMonoGameMessage.Size = new System.Drawing.Size(245, 78);
+            this.lblDownloaMonoGameMessage.TabIndex = 2;
+            this.lblDownloaMonoGameMessage.Text = "Click below to begin downloading the MonoGame SDK";
+            this.lblDownloaMonoGameMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDownloadMonoGameHeader
+            // 
+            this.lblDownloadMonoGameHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDownloadMonoGameHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDownloadMonoGameHeader.Location = new System.Drawing.Point(0, 5);
+            this.lblDownloadMonoGameHeader.Name = "lblDownloadMonoGameHeader";
+            this.lblDownloadMonoGameHeader.Size = new System.Drawing.Size(245, 27);
+            this.lblDownloadMonoGameHeader.TabIndex = 1;
+            this.lblDownloadMonoGameHeader.Text = "Download MonoGame";
+            this.lblDownloadMonoGameHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDownloadMonoGameActive
+            // 
+            this.pnlDownloadMonoGameActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.pnlDownloadMonoGameActive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDownloadMonoGameActive.Location = new System.Drawing.Point(0, 0);
+            this.pnlDownloadMonoGameActive.MaximumSize = new System.Drawing.Size(0, 5);
+            this.pnlDownloadMonoGameActive.MinimumSize = new System.Drawing.Size(0, 5);
+            this.pnlDownloadMonoGameActive.Name = "pnlDownloadMonoGameActive";
+            this.pnlDownloadMonoGameActive.Size = new System.Drawing.Size(245, 5);
+            this.pnlDownloadMonoGameActive.TabIndex = 0;
+            // 
+            // pnlVisualStudioVerifier
+            // 
+            this.pnlVisualStudioVerifier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVisualStudioVerifier.Controls.Add(this.lblVisualStudioDownload);
+            this.pnlVisualStudioVerifier.Controls.Add(this.lblVisualStudioVerified);
+            this.pnlVisualStudioVerifier.Controls.Add(this.pnlVerifyVisualStudioMid);
+            this.pnlVisualStudioVerifier.Controls.Add(this.lblVisualStudioVerifierMessage);
+            this.pnlVisualStudioVerifier.Controls.Add(this.lblVisualStudioVerifierHeader);
+            this.pnlVisualStudioVerifier.Controls.Add(this.pnlVisualStudioVeriferActive);
+            this.pnlVisualStudioVerifier.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlVisualStudioVerifier.Enabled = false;
+            this.pnlVisualStudioVerifier.Location = new System.Drawing.Point(3, 68);
+            this.pnlVisualStudioVerifier.Name = "pnlVisualStudioVerifier";
+            this.pnlVisualStudioVerifier.Size = new System.Drawing.Size(247, 337);
+            this.pnlVisualStudioVerifier.TabIndex = 4;
+            this.pnlVisualStudioVerifier.EnabledChanged += new System.EventHandler(this.pnlVisualStudioVerifier_EnabledChanged);
+            // 
+            // lblVisualStudioDownload
+            // 
+            this.lblVisualStudioDownload.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblVisualStudioDownload.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisualStudioDownload.Location = new System.Drawing.Point(0, 262);
+            this.lblVisualStudioDownload.Name = "lblVisualStudioDownload";
+            this.lblVisualStudioDownload.Size = new System.Drawing.Size(245, 73);
+            this.lblVisualStudioDownload.TabIndex = 6;
+            this.lblVisualStudioDownload.TabStop = true;
+            this.lblVisualStudioDownload.Text = "Unable to detect Visual Studio 2017 Community or higher installation. Click here " +
+    "to go to the download page.";
+            this.lblVisualStudioDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVisualStudioDownload.Visible = false;
+            // 
+            // lblVisualStudioVerified
+            // 
+            this.lblVisualStudioVerified.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblVisualStudioVerified.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisualStudioVerified.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblVisualStudioVerified.Location = new System.Drawing.Point(0, 210);
+            this.lblVisualStudioVerified.Name = "lblVisualStudioVerified";
+            this.lblVisualStudioVerified.Size = new System.Drawing.Size(245, 52);
+            this.lblVisualStudioVerified.TabIndex = 5;
+            this.lblVisualStudioVerified.Text = "Verified Visual Studio 2017 Community is installed";
+            this.lblVisualStudioVerified.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVisualStudioVerified.Visible = false;
+            // 
+            // pnlVerifyVisualStudioMid
+            // 
+            this.pnlVerifyVisualStudioMid.Controls.Add(this.btnVerifyVisualStudio);
+            this.pnlVerifyVisualStudioMid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlVerifyVisualStudioMid.Location = new System.Drawing.Point(0, 110);
+            this.pnlVerifyVisualStudioMid.Name = "pnlVerifyVisualStudioMid";
+            this.pnlVerifyVisualStudioMid.Size = new System.Drawing.Size(245, 100);
+            this.pnlVerifyVisualStudioMid.TabIndex = 4;
+            // 
+            // btnVerifyVisualStudio
+            // 
+            this.btnVerifyVisualStudio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVerifyVisualStudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerifyVisualStudio.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerifyVisualStudio.Location = new System.Drawing.Point(56, 36);
+            this.btnVerifyVisualStudio.Name = "btnVerifyVisualStudio";
+            this.btnVerifyVisualStudio.Size = new System.Drawing.Size(125, 38);
+            this.btnVerifyVisualStudio.TabIndex = 3;
+            this.btnVerifyVisualStudio.Text = "Verify Installation";
+            this.btnVerifyVisualStudio.UseVisualStyleBackColor = true;
+            this.btnVerifyVisualStudio.Click += new System.EventHandler(this.btnVerifyVisualStudio_Click);
+            // 
+            // lblVisualStudioVerifierMessage
+            // 
+            this.lblVisualStudioVerifierMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblVisualStudioVerifierMessage.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisualStudioVerifierMessage.Location = new System.Drawing.Point(0, 32);
+            this.lblVisualStudioVerifierMessage.Name = "lblVisualStudioVerifierMessage";
+            this.lblVisualStudioVerifierMessage.Size = new System.Drawing.Size(245, 78);
+            this.lblVisualStudioVerifierMessage.TabIndex = 2;
+            this.lblVisualStudioVerifierMessage.Text = "Visual Studio 2017 Community or higher is required.\r\n";
+            this.lblVisualStudioVerifierMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblVisualStudioVerifierHeader
+            // 
+            this.lblVisualStudioVerifierHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblVisualStudioVerifierHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisualStudioVerifierHeader.Location = new System.Drawing.Point(0, 5);
+            this.lblVisualStudioVerifierHeader.Name = "lblVisualStudioVerifierHeader";
+            this.lblVisualStudioVerifierHeader.Size = new System.Drawing.Size(245, 27);
+            this.lblVisualStudioVerifierHeader.TabIndex = 1;
+            this.lblVisualStudioVerifierHeader.Text = "Verify Visual Studio Installation";
+            this.lblVisualStudioVerifierHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlVisualStudioVeriferActive
+            // 
+            this.pnlVisualStudioVeriferActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.pnlVisualStudioVeriferActive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlVisualStudioVeriferActive.Location = new System.Drawing.Point(0, 0);
+            this.pnlVisualStudioVeriferActive.MaximumSize = new System.Drawing.Size(0, 5);
+            this.pnlVisualStudioVeriferActive.MinimumSize = new System.Drawing.Size(0, 5);
+            this.pnlVisualStudioVeriferActive.Name = "pnlVisualStudioVeriferActive";
+            this.pnlVisualStudioVeriferActive.Size = new System.Drawing.Size(245, 5);
+            this.pnlVisualStudioVeriferActive.TabIndex = 0;
             // 
             // lblInstallHeader
             // 
-            this.lblInstallHeader.AutoSize = true;
             this.lblInstallHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblInstallHeader.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstallHeader.Location = new System.Drawing.Point(3, 3);
             this.lblInstallHeader.Name = "lblInstallHeader";
-            this.lblInstallHeader.Size = new System.Drawing.Size(393, 48);
+            this.lblInstallHeader.Size = new System.Drawing.Size(722, 65);
             this.lblInstallHeader.TabIndex = 3;
             this.lblInstallHeader.Text = "Installing MonoGame";
             // 
@@ -338,7 +615,7 @@
             this.tbpProjects.Location = new System.Drawing.Point(4, 5);
             this.tbpProjects.Name = "tbpProjects";
             this.tbpProjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpProjects.Size = new System.Drawing.Size(770, 443);
+            this.tbpProjects.Size = new System.Drawing.Size(728, 408);
             this.tbpProjects.TabIndex = 2;
             this.tbpProjects.Text = "Projects";
             this.tbpProjects.UseVisualStyleBackColor = true;
@@ -360,7 +637,6 @@
             this.btnInstallBegin.TabIndex = 1;
             this.btnInstallBegin.Text = "Download and Install";
             this.btnInstallBegin.UseVisualStyleBackColor = true;
-            this.btnInstallBegin.Click += new System.EventHandler(this.btnInstallBegin_Click);
             // 
             // statusStrip
             // 
@@ -368,9 +644,9 @@
             this.statusLabel,
             this.statusStripDivider,
             this.lblMonoGameDetected});
-            this.statusStrip.Location = new System.Drawing.Point(0, 538);
+            this.statusStrip.Location = new System.Drawing.Point(0, 503);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(980, 22);
+            this.statusStrip.Size = new System.Drawing.Size(938, 22);
             this.statusStrip.TabIndex = 5;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -384,7 +660,7 @@
             // statusStripDivider
             // 
             this.statusStripDivider.Name = "statusStripDivider";
-            this.statusStripDivider.Size = new System.Drawing.Size(580, 17);
+            this.statusStripDivider.Size = new System.Drawing.Size(507, 17);
             this.statusStripDivider.Spring = true;
             // 
             // lblMonoGameDetected
@@ -408,14 +684,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(200, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 454);
+            this.panel1.Size = new System.Drawing.Size(738, 419);
             this.panel1.TabIndex = 4;
             // 
             // frmMonoGameHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 560);
+            this.ClientSize = new System.Drawing.Size(938, 525);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.pnlTop);
@@ -436,7 +712,12 @@
             this.pnlNewInfo1.ResumeLayout(false);
             this.pnlNewInfo1.PerformLayout();
             this.tbpInstall.ResumeLayout(false);
-            this.tbpInstall.PerformLayout();
+            this.pnlInstallMonoGame.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.pnlDownloadMonoGame.ResumeLayout(false);
+            this.pnlDownloadMonoGameMid.ResumeLayout(false);
+            this.pnlVisualStudioVerifier.ResumeLayout(false);
+            this.pnlVerifyVisualStudioMid.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -473,13 +754,33 @@
         private System.Windows.Forms.ToolStripStatusLabel statusStripDivider;
         private System.Windows.Forms.ToolStripStatusLabel lblMonoGameDetected;
         private System.Windows.Forms.ProgressBar progressBarDownloading;
-        private Controls.InstallVisualStudioControl installVisualStudioControl1;
-        private Controls.InstallVisualStudioControl installVisualStudioControl2;
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnProjects;
         private System.Windows.Forms.Label lblInstallHeader;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlVisualStudioVerifier;
+        private System.Windows.Forms.Panel pnlVisualStudioVeriferActive;
+        private System.Windows.Forms.Label lblVisualStudioVerifierHeader;
+        private System.Windows.Forms.Label lblVisualStudioVerifierMessage;
+        private System.Windows.Forms.Button btnVerifyVisualStudio;
+        private System.Windows.Forms.Label lblVisualStudioVerified;
+        private System.Windows.Forms.Panel pnlVerifyVisualStudioMid;
+        private System.Windows.Forms.LinkLabel lblVisualStudioDownload;
+        private System.Windows.Forms.Panel pnlDownloadMonoGame;
+        private System.Windows.Forms.Panel pnlDownloadMonoGameMid;
+        private System.Windows.Forms.Button btnDownloaMonoGame;
+        private System.Windows.Forms.Label lblDownloaMonoGameMessage;
+        private System.Windows.Forms.Label lblDownloadMonoGameHeader;
+        private System.Windows.Forms.Panel pnlDownloadMonoGameActive;
+        private System.Windows.Forms.Label lblDownloadMonoGamePercentage;
+        private System.Windows.Forms.ProgressBar pgbDownloadMonoGame;
+        private System.Windows.Forms.Panel pnlInstallMonoGame;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnInstallMonoGame;
+        private System.Windows.Forms.Label lblInstallMonoGameMessage;
+        private System.Windows.Forms.Label lblInstallMonoGameHeader;
+        private System.Windows.Forms.Panel pnlInstallMonoGameActive;
     }
 }
 
