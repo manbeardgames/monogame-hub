@@ -68,7 +68,7 @@
             this.pnlWindowTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlWindowTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlWindowTitle.Name = "pnlWindowTitle";
-            this.pnlWindowTitle.Size = new System.Drawing.Size(1024, 27);
+            this.pnlWindowTitle.Size = new System.Drawing.Size(1024, 30);
             this.pnlWindowTitle.TabIndex = 1;
             this.pnlWindowTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseDown);
             this.pnlWindowTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveWindow_MouseMove);
@@ -84,7 +84,7 @@
             this.btnClose.Image = global::MonoGameHub.Properties.Resources.close_white;
             this.btnClose.Location = new System.Drawing.Point(987, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 27);
+            this.btnClose.Size = new System.Drawing.Size(37, 30);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -92,9 +92,9 @@
             // pnlContentRegion
             // 
             this.pnlContentRegion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContentRegion.Location = new System.Drawing.Point(0, 27);
+            this.pnlContentRegion.Location = new System.Drawing.Point(0, 30);
             this.pnlContentRegion.Name = "pnlContentRegion";
-            this.pnlContentRegion.Size = new System.Drawing.Size(1024, 683);
+            this.pnlContentRegion.Size = new System.Drawing.Size(1024, 680);
             this.pnlContentRegion.TabIndex = 2;
             // 
             // frmMonoGameHub

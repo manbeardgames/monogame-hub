@@ -13,6 +13,9 @@ namespace MonoGameHub.Windows
         /// </summary>
         private HomeView _homeView;
 
+        private ChooseTemplateView _chooseTemplateView;
+        private ConfigureProjectView _configureProjectView;
+
         /// <summary>
         ///     Creates a new <see cref="frmMonoGameHub"/> instance
         /// </summary>
@@ -32,7 +35,42 @@ namespace MonoGameHub.Windows
             //  Create a new HomeView control and add it to the content region panel
             _homeView = new HomeView();
             _homeView.Dock = DockStyle.Fill;
+            _homeView.NewProjectClicked += (_, e) =>
+            {
+                pnlContentRegion.Controls.Remove(_homeView);
+                pnlContentRegion.Controls.Add(_chooseTemplateView);
+            };
             _homeView.Initialize();
+
+
+            _chooseTemplateView = new ChooseTemplateView();
+            _chooseTemplateView.Dock = DockStyle.Fill;
+            _chooseTemplateView.Cancel += (_, e) =>
+            {
+                pnlContentRegion.Controls.Remove(_chooseTemplateView);
+                pnlContentRegion.Controls.Add(_homeView);
+            };
+
+            _chooseTemplateView.Next += (_, e) =>
+            {
+                pnlContentRegion.Controls.Remove(_chooseTemplateView);
+                pnlContentRegion.Controls.Add(_configureProjectView);
+
+            };
+
+            _configureProjectView = new ConfigureProjectView();
+            _configureProjectView.Dock = DockStyle.Fill;
+            _configureProjectView.Back += (_, e) =>
+            {
+                pnlContentRegion.Controls.Remove(_configureProjectView);
+                pnlContentRegion.Controls.Add(_chooseTemplateView);
+            };
+
+
+
+
+
+
             pnlContentRegion.Controls.Add(_homeView);
         }
 

@@ -71,7 +71,20 @@
     <Compile Include="Controls\DownloadInstallButton.Designer.cs">
       <DependentUpon>DownloadInstallButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonoGameProjectTemplate.cs" />
     <Compile Include="MonoGameInstallType.cs" />
+    <Compile Include="Views\ChooseTemplateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ChooseTemplateView.Designer.cs">
+      <DependentUpon>ChooseTemplateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigureProjectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ConfigureProjectView.Designer.cs">
+      <DependentUpon>ConfigureProjectView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\frmMonoGameHub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DownloadInstallButton.resx">
       <DependentUpon>DownloadInstallButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChooseTemplateView.resx">
+      <DependentUpon>ChooseTemplateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfigureProjectView.resx">
+      <DependentUpon>ConfigureProjectView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\frmMonoGameHub.resx">
       <DependentUpon>frmMonoGameHub.cs</DependentUpon>
