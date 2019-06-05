@@ -1,12 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace MonoGameHub.Windows
@@ -19,7 +11,6 @@ namespace MonoGameHub.Windows
         //  Determines if the spalsh screen can close when the timer interval is called
         private bool _canClose;
 
-
         /// <summary>
         ///     Creates a new instance
         /// </summary>
@@ -29,7 +20,7 @@ namespace MonoGameHub.Windows
         }
 
         /// <summary>
-        ///     Called when the this <see cref="frmSplash"/> first loads
+        ///     Called when the this <see cref="frmSplash"/> instance first loads
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -60,35 +51,11 @@ namespace MonoGameHub.Windows
             _canClose = true;
         }
 
-        ///// <summary>
-        /////     Gets if MonoGame is installed
-        ///// </summary>
-        ///// <returns>True if MonoGame is installed; otherwise false</returns>
-        //private bool IsMonoGameInstalled()
-        //{
-        //    //  To verify if MonoGame is installed, we're going to check for the MonoGame key in the
-        //    //  Uninstall registry
-        //    var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MonoGame") ??
-        //        Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\MonoGame");
-
-        //    if (key == null)
-        //    {
-        //        //  If the key is null, then MonoGame is not installed
-        //        MonoGameVersion = null;
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        //  Get the displayVersion value from the key
-        //        string displayVersion = key.GetValue("DisplayVersion") as string;
-
-        //        //  Instantiate the version
-        //        MonoGameVersion = new Version(displayVersion);
-
-        //        return true;
-        //    }
-        //}
-
+        /// <summary>
+        ///     Called when this <see cref="frmSplash"/> instance is closing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmSplash_FormClosing(object sender, FormClosingEventArgs e)
         {
             _timer.Stop();
