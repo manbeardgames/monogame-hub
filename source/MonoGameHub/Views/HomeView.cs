@@ -25,15 +25,20 @@ namespace MonoGameHub.Views
         public event EventHandler LearnMonoGameClicked;
 
 
-
+        /// <summary>
+        ///     Creates a new <see cref="HomeView"/> instance
+        /// </summary>
         public HomeView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        ///     Initializes the controls that are not added through the designer
+        /// </summary>
         public void Initialize()
         {
-
+            //  If MonoGame installation was not detected, add the download/install button
             if(Program.MonoGameInstall != MonoGameInstallType.Installed)
             {
                 DownloadInstallButton installButton = new DownloadInstallButton();
@@ -120,17 +125,33 @@ namespace MonoGameHub.Views
             }                               
         }
 
+        /// <summary>
+        ///     Handles the MouseEnter event for all buttons in the <see cref="pnlGettingStartedList"/>
+        ///     panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GettingStartedButton_MouseEnter(object sender, EventArgs e)
         {
+            //  Get reference to the button as a Control
             Control button = sender as Control;
-            //ButtonWIthContent button = sender as ButtonWIthContent;
+
+            //  Change the background color to show that the button is highlighted
             button.BackColor = Color.FromArgb(230, 60, 0);
         }
 
+        /// <summary>
+        ///     Handles the MouseLeave event for all buttons in the <see cref="pnlGettingStartedList"/>
+        ///     panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GettingStartedButton_MouseLeave(object sender, EventArgs e)
         {
+            //  Get refrence to the button as a Control
             Control button = sender as Control;
-            //ButtonWIthContent button = sender as ButtonWIthContent;
+
+            //  Change the background color to show that the button is no longer highlighted
             button.BackColor = Color.FromArgb(51, 51, 55);
         }
 
@@ -139,7 +160,6 @@ namespace MonoGameHub.Views
             InstallMonoGameClicked?.Invoke(this, null);
         }
 
-        
         private void BtnLearn_MouseClick(object sender, MouseEventArgs e)
         {
             LearnMonoGameClicked?.Invoke(this, null);
