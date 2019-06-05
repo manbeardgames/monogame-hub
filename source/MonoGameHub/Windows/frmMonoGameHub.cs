@@ -41,7 +41,7 @@ namespace MonoGameHub.Windows
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             //  Close the window
             this.Close();
