@@ -88,30 +88,6 @@
     <Compile Include="Views\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\InstallMonoGameView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\InstallMonoGameView.Designer.cs">
-      <DependentUpon>InstallMonoGameView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\InstallView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\InstallView.Designer.cs">
-      <DependentUpon>InstallView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DownloadMonoGameView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\DownloadMonoGameView.Designer.cs">
-      <DependentUpon>DownloadMonoGameView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\VisualStudioInstallView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\VisualStudioInstallView.Designer.cs">
-      <DependentUpon>VisualStudioInstallView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,18 +118,6 @@
     </Content>
     <EmbeddedResource Include="Views\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\InstallMonoGameView.resx">
-      <DependentUpon>InstallMonoGameView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\InstallView.resx">
-      <DependentUpon>InstallView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\DownloadMonoGameView.resx">
-      <DependentUpon>DownloadMonoGameView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\VisualStudioInstallView.resx">
-      <DependentUpon>VisualStudioInstallView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
