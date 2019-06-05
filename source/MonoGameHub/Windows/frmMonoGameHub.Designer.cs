@@ -87,7 +87,7 @@
             this.btnClose.Size = new System.Drawing.Size(37, 27);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlContentRegion
             // 
@@ -115,7 +115,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MonoGame Hub";
-            this.Load += new System.EventHandler(this.frmMonoGameHub_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MoveWindow_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MoveWindow_MouseUp);
