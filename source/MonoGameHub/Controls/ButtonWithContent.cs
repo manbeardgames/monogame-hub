@@ -82,6 +82,8 @@ namespace MonoGameHub.Controls
             }
         }
 
+        public bool IsSelected { get; set; }
+
 
 
         public ButtonWithContent()
