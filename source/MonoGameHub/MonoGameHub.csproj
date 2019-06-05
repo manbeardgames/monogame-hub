@@ -59,16 +59,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controls\ButtonWithContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonWithContent.Designer.cs">
+      <DependentUpon>ButtonWithContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DownloadInstallButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownloadInstallButton.Designer.cs">
+      <DependentUpon>DownloadInstallButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonoGameInstallType.cs" />
+    <Compile Include="Windows\frmMonoGameHub.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Windows\frmMonoGameHub.Designer.cs">
+      <DependentUpon>frmMonoGameHub.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Repositories\ProjectsRepository.cs" />
+    <Compile Include="Views\HomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstallMonoGameView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InstallMonoGameView.Designer.cs">
+      <DependentUpon>InstallMonoGameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstallView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InstallView.Designer.cs">
+      <DependentUpon>InstallView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadMonoGameView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DownloadMonoGameView.Designer.cs">
+      <DependentUpon>DownloadMonoGameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisualStudioInstallView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\VisualStudioInstallView.Designer.cs">
+      <DependentUpon>VisualStudioInstallView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\ButtonWithContent.resx">
+      <DependentUpon>ButtonWithContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DownloadInstallButton.resx">
+      <DependentUpon>DownloadInstallButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\frmMonoGameHub.resx">
+      <DependentUpon>frmMonoGameHub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +140,24 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Views\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstallMonoGameView.resx">
+      <DependentUpon>InstallMonoGameView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstallView.resx">
+      <DependentUpon>InstallView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DownloadMonoGameView.resx">
+      <DependentUpon>DownloadMonoGameView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VisualStudioInstallView.resx">
+      <DependentUpon>VisualStudioInstallView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -106,10 +181,18 @@
   <ItemGroup>
     <None Include="Resources\close.png" />
     <None Include="Resources\check.png" />
+    <None Include="Resources\HorizontalLogo_512px.png" />
+    <None Include="Resources\close_white.png" />
+    <None Include="Resources\LogoOnly_512px.png" />
+    <None Include="Resources\LogoOnly_32px.png" />
+    <None Include="Resources\file-document-box-multiple-outline.png" />
+    <None Include="Resources\lightbulb-on-outline.png" />
+    <None Include="Resources\file-document-box-plus-outline.png" />
     <Content Include="vswhere.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
