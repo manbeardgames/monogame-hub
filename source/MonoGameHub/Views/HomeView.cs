@@ -25,7 +25,6 @@ namespace MonoGameHub.Views
         /// </summary>
         public event EventHandler LearnMonoGameClicked;
 
-
         /// <summary>
         ///     Creates a new <see cref="HomeView"/> instance
         /// </summary>
