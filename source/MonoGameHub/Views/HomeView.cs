@@ -1,27 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MonoGameHub.Controls;
-using MonoGameHub.Repositories;
+﻿using MonoGameHub.Controls;
 using MonoGameHub.Models;
+using MonoGameHub.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace MonoGameHub.Views
 {
     public partial class HomeView : UserControl
     {
-        [Browsable(true)]
-        public event EventHandler InstallMonoGameClicked;
-        [Browsable(true)]
+        /// <summary>
+        ///     Occurs when the <see cref="btnNewProject"/> control is clicked
+        /// </summary>
         public event EventHandler NewProjectClicked;
-        [Browsable(true)]
+
+        /// <summary>
+        ///     Occurs when the <see cref="btnOpenProject"/> control is clicked
+        /// </summary>
         public event EventHandler OpenProjectClicked;
-        [Browsable(true)]
+
+        /// <summary>
+        ///     Occurs when the <see cref="btnLearn"/> control is clicked
+        /// </summary>
         public event EventHandler LearnMonoGameClicked;
 
 
@@ -39,7 +40,7 @@ namespace MonoGameHub.Views
         public void Initialize()
         {
             //  If MonoGame installation was not detected, add the download/install button
-            if(Program.MonoGameInstall != MonoGameInstallType.Installed)
+            if (Program.MonoGameInstall != MonoGameInstallType.Installed)
             {
                 DownloadInstallButton installButton = new DownloadInstallButton();
                 installButton.Initialize();
@@ -58,17 +59,6 @@ namespace MonoGameHub.Views
             //  Load projects
             ProjectsRepository repo = new ProjectsRepository();
             List<ProjectModel> projects = repo.LoadTestProjects();
-            foreach(var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
-
             foreach (var project in projects)
             {
                 ButtonWithContent button = new ButtonWithContent();
@@ -122,7 +112,18 @@ namespace MonoGameHub.Views
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
                 pnlProjectList.Controls.Add(button);
-            }                               
+            }
+
+            foreach (var project in projects)
+            {
+                ButtonWithContent button = new ButtonWithContent();
+                button.BackColor = Color.Transparent;
+                button.Size = new Size(468, 75);
+                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
+                button.TitleText = project.Name;
+                button.DescriptionText = project.PathToSolution;
+                pnlProjectList.Controls.Add(button);
+            }
         }
 
         /// <summary>
@@ -155,23 +156,36 @@ namespace MonoGameHub.Views
             button.BackColor = Color.FromArgb(51, 51, 55);
         }
 
-        private void BtnInstall_MouseClick(object sender, MouseEventArgs e)
-        {
-            InstallMonoGameClicked?.Invoke(this, null);
-        }
-
+        /// <summary>
+        ///     Handles the MouseClick event for the <see cref="btnLearn"/> control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnLearn_MouseClick(object sender, MouseEventArgs e)
         {
+            //  Triggers the LearnMonoGameClicked event
             LearnMonoGameClicked?.Invoke(this, null);
         }
 
+        /// <summary>
+        ///     Handles the MouseClick event for the <see cref="btnOpenProject"/> control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnOpenProject_MouseClick(object sender, MouseEventArgs e)
         {
+            //  Trigger the OpenProjectClicked event
             OpenProjectClicked?.Invoke(this, null);
         }
 
+        /// <summary>
+        ///     Handles the MouseClick event for the <see cref="btnNewProject"/> control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnNewProject_MouseClick(object sender, MouseEventArgs e)
         {
+            //  Trigger the NewProjectClicked event
             NewProjectClicked?.Invoke(this, null);
         }
     }

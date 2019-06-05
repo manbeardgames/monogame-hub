@@ -34,12 +34,12 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlProjectList = new System.Windows.Forms.FlowLayoutPanel();
             this.lblProjects = new System.Windows.Forms.Label();
-            this.btnLearn = new MonoGameHub.Controls.ButtonWithContent();
-            this.btnOpenProject = new MonoGameHub.Controls.ButtonWithContent();
+            this.pnlGettingStartedList = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNewProject = new MonoGameHub.Controls.ButtonWithContent();
+            this.btnOpenProject = new MonoGameHub.Controls.ButtonWithContent();
+            this.btnLearn = new MonoGameHub.Controls.ButtonWithContent();
             this.lblGettingStarted = new System.Windows.Forms.Label();
             this.pnlSpacer = new System.Windows.Forms.Panel();
-            this.pnlGettingStartedList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLogoWrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -125,47 +125,16 @@
             this.lblProjects.Text = "Projects";
             this.lblProjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnLearn
+            // pnlGettingStartedList
             // 
-            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
-            this.btnLearn.DescriptionFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLearn.DescriptionForecolor = System.Drawing.Color.White;
-            this.btnLearn.DescriptionText = "Learn to make games using the MonoGame framework.";
-            this.btnLearn.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLearn.ForeColor = System.Drawing.Color.White;
-            this.btnLearn.Location = new System.Drawing.Point(6, 180);
-            this.btnLearn.Logo = global::MonoGameHub.Properties.Resources.lightbulb_on_outline;
-            this.btnLearn.Margin = new System.Windows.Forms.Padding(6);
-            this.btnLearn.Name = "btnLearn";
-            this.btnLearn.Size = new System.Drawing.Size(468, 75);
-            this.btnLearn.TabIndex = 5;
-            this.btnLearn.TitleFont = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLearn.TitleForecolor = System.Drawing.Color.White;
-            this.btnLearn.TitleText = "Learn MonoGame";
-            this.btnLearn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnLearn_MouseClick);
-            this.btnLearn.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
-            this.btnLearn.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
-            // 
-            // btnOpenProject
-            // 
-            this.btnOpenProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
-            this.btnOpenProject.DescriptionFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenProject.DescriptionForecolor = System.Drawing.Color.White;
-            this.btnOpenProject.DescriptionText = "Open a MonoGame project that\'s not listed in your projects list";
-            this.btnOpenProject.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenProject.ForeColor = System.Drawing.Color.White;
-            this.btnOpenProject.Location = new System.Drawing.Point(6, 93);
-            this.btnOpenProject.Logo = global::MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-            this.btnOpenProject.Margin = new System.Windows.Forms.Padding(6);
-            this.btnOpenProject.Name = "btnOpenProject";
-            this.btnOpenProject.Size = new System.Drawing.Size(468, 75);
-            this.btnOpenProject.TabIndex = 4;
-            this.btnOpenProject.TitleFont = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenProject.TitleForecolor = System.Drawing.Color.White;
-            this.btnOpenProject.TitleText = "Open MonoGame Project";
-            this.btnOpenProject.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnOpenProject_MouseClick);
-            this.btnOpenProject.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
-            this.btnOpenProject.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
+            this.pnlGettingStartedList.Controls.Add(this.btnNewProject);
+            this.pnlGettingStartedList.Controls.Add(this.btnOpenProject);
+            this.pnlGettingStartedList.Controls.Add(this.btnLearn);
+            this.pnlGettingStartedList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGettingStartedList.Location = new System.Drawing.Point(0, 40);
+            this.pnlGettingStartedList.Name = "pnlGettingStartedList";
+            this.pnlGettingStartedList.Size = new System.Drawing.Size(506, 560);
+            this.pnlGettingStartedList.TabIndex = 2;
             // 
             // btnNewProject
             // 
@@ -188,6 +157,48 @@
             this.btnNewProject.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
             this.btnNewProject.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
             // 
+            // btnOpenProject
+            // 
+            this.btnOpenProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btnOpenProject.DescriptionFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenProject.DescriptionForecolor = System.Drawing.Color.White;
+            this.btnOpenProject.DescriptionText = "Open a MonoGame project that\'s not listed in your projects list";
+            this.btnOpenProject.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenProject.ForeColor = System.Drawing.Color.White;
+            this.btnOpenProject.Location = new System.Drawing.Point(6, 93);
+            this.btnOpenProject.Logo = global::MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
+            this.btnOpenProject.Margin = new System.Windows.Forms.Padding(6);
+            this.btnOpenProject.Name = "btnOpenProject";
+            this.btnOpenProject.Size = new System.Drawing.Size(468, 75);
+            this.btnOpenProject.TabIndex = 4;
+            this.btnOpenProject.TitleFont = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenProject.TitleForecolor = System.Drawing.Color.White;
+            this.btnOpenProject.TitleText = "Open MonoGame Project";
+            this.btnOpenProject.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnOpenProject_MouseClick);
+            this.btnOpenProject.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
+            this.btnOpenProject.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
+            // 
+            // btnLearn
+            // 
+            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btnLearn.DescriptionFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLearn.DescriptionForecolor = System.Drawing.Color.White;
+            this.btnLearn.DescriptionText = "Learn to make games using the MonoGame framework.";
+            this.btnLearn.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLearn.ForeColor = System.Drawing.Color.White;
+            this.btnLearn.Location = new System.Drawing.Point(6, 180);
+            this.btnLearn.Logo = global::MonoGameHub.Properties.Resources.lightbulb_on_outline;
+            this.btnLearn.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLearn.Name = "btnLearn";
+            this.btnLearn.Size = new System.Drawing.Size(468, 75);
+            this.btnLearn.TabIndex = 5;
+            this.btnLearn.TitleFont = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLearn.TitleForecolor = System.Drawing.Color.White;
+            this.btnLearn.TitleText = "Learn MonoGame";
+            this.btnLearn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnLearn_MouseClick);
+            this.btnLearn.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
+            this.btnLearn.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
+            // 
             // lblGettingStarted
             // 
             this.lblGettingStarted.Dock = System.Windows.Forms.DockStyle.Top;
@@ -206,17 +217,6 @@
             this.pnlSpacer.Name = "pnlSpacer";
             this.pnlSpacer.Size = new System.Drawing.Size(1014, 20);
             this.pnlSpacer.TabIndex = 0;
-            // 
-            // pnlGettingStartedList
-            // 
-            this.pnlGettingStartedList.Controls.Add(this.btnNewProject);
-            this.pnlGettingStartedList.Controls.Add(this.btnOpenProject);
-            this.pnlGettingStartedList.Controls.Add(this.btnLearn);
-            this.pnlGettingStartedList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGettingStartedList.Location = new System.Drawing.Point(0, 40);
-            this.pnlGettingStartedList.Name = "pnlGettingStartedList";
-            this.pnlGettingStartedList.Size = new System.Drawing.Size(506, 560);
-            this.pnlGettingStartedList.TabIndex = 2;
             // 
             // HomeView
             // 
