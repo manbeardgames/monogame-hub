@@ -30,23 +30,23 @@
         {
             this.pnlLogoWrapper = new System.Windows.Forms.Panel();
             this.lblHub = new System.Windows.Forms.Label();
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlProjectList = new System.Windows.Forms.FlowLayoutPanel();
             this.lblProjects = new System.Windows.Forms.Label();
             this.pnlGettingStartedList = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblGettingStarted = new System.Windows.Forms.Label();
+            this.pnlSpacer = new System.Windows.Forms.Panel();
             this.btnNewProject = new MonoGameHub.Controls.ButtonWithContent();
             this.btnOpenProject = new MonoGameHub.Controls.ButtonWithContent();
             this.btnLearn = new MonoGameHub.Controls.ButtonWithContent();
-            this.lblGettingStarted = new System.Windows.Forms.Label();
-            this.pnlSpacer = new System.Windows.Forms.Panel();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlLogoWrapper.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pnlGettingStartedList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogoWrapper
@@ -54,9 +54,9 @@
             this.pnlLogoWrapper.Controls.Add(this.lblHub);
             this.pnlLogoWrapper.Controls.Add(this.pcbLogo);
             this.pnlLogoWrapper.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogoWrapper.Location = new System.Drawing.Point(5, 5);
+            this.pnlLogoWrapper.Location = new System.Drawing.Point(30, 0);
             this.pnlLogoWrapper.Name = "pnlLogoWrapper";
-            this.pnlLogoWrapper.Size = new System.Drawing.Size(1014, 53);
+            this.pnlLogoWrapper.Size = new System.Drawing.Size(964, 53);
             this.pnlLogoWrapper.TabIndex = 1;
             // 
             // lblHub
@@ -71,22 +71,11 @@
             this.lblHub.Text = "Hub";
             this.lblHub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pcbLogo
-            // 
-            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pcbLogo.Image = global::MonoGameHub.Properties.Resources.HorizontalLogo_512px;
-            this.pcbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(256, 53);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbLogo.TabIndex = 0;
-            this.pcbLogo.TabStop = false;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(5, 78);
+            this.splitContainer1.Location = new System.Drawing.Point(30, 73);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -98,8 +87,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlGettingStartedList);
             this.splitContainer1.Panel2.Controls.Add(this.lblGettingStarted);
-            this.splitContainer1.Size = new System.Drawing.Size(1014, 600);
-            this.splitContainer1.SplitterDistance = 507;
+            this.splitContainer1.Size = new System.Drawing.Size(964, 580);
+            this.splitContainer1.SplitterDistance = 482;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -110,7 +99,7 @@
             this.pnlProjectList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlProjectList.Location = new System.Drawing.Point(0, 40);
             this.pnlProjectList.Name = "pnlProjectList";
-            this.pnlProjectList.Size = new System.Drawing.Size(507, 560);
+            this.pnlProjectList.Size = new System.Drawing.Size(482, 540);
             this.pnlProjectList.TabIndex = 1;
             this.pnlProjectList.WrapContents = false;
             // 
@@ -120,7 +109,7 @@
             this.lblProjects.ForeColor = System.Drawing.Color.White;
             this.lblProjects.Location = new System.Drawing.Point(0, 0);
             this.lblProjects.Name = "lblProjects";
-            this.lblProjects.Size = new System.Drawing.Size(507, 40);
+            this.lblProjects.Size = new System.Drawing.Size(482, 40);
             this.lblProjects.TabIndex = 0;
             this.lblProjects.Text = "Projects";
             this.lblProjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,8 +122,27 @@
             this.pnlGettingStartedList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGettingStartedList.Location = new System.Drawing.Point(0, 40);
             this.pnlGettingStartedList.Name = "pnlGettingStartedList";
-            this.pnlGettingStartedList.Size = new System.Drawing.Size(506, 560);
+            this.pnlGettingStartedList.Size = new System.Drawing.Size(481, 540);
             this.pnlGettingStartedList.TabIndex = 2;
+            // 
+            // lblGettingStarted
+            // 
+            this.lblGettingStarted.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGettingStarted.ForeColor = System.Drawing.Color.White;
+            this.lblGettingStarted.Location = new System.Drawing.Point(0, 0);
+            this.lblGettingStarted.Name = "lblGettingStarted";
+            this.lblGettingStarted.Size = new System.Drawing.Size(481, 40);
+            this.lblGettingStarted.TabIndex = 1;
+            this.lblGettingStarted.Text = "Getting Started";
+            this.lblGettingStarted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlSpacer
+            // 
+            this.pnlSpacer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSpacer.Location = new System.Drawing.Point(30, 53);
+            this.pnlSpacer.Name = "pnlSpacer";
+            this.pnlSpacer.Size = new System.Drawing.Size(964, 20);
+            this.pnlSpacer.TabIndex = 0;
             // 
             // btnNewProject
             // 
@@ -199,24 +207,16 @@
             this.btnLearn.MouseEnter += new System.EventHandler(this.GettingStartedButton_MouseEnter);
             this.btnLearn.MouseLeave += new System.EventHandler(this.GettingStartedButton_MouseLeave);
             // 
-            // lblGettingStarted
+            // pcbLogo
             // 
-            this.lblGettingStarted.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblGettingStarted.ForeColor = System.Drawing.Color.White;
-            this.lblGettingStarted.Location = new System.Drawing.Point(0, 0);
-            this.lblGettingStarted.Name = "lblGettingStarted";
-            this.lblGettingStarted.Size = new System.Drawing.Size(506, 40);
-            this.lblGettingStarted.TabIndex = 1;
-            this.lblGettingStarted.Text = "Getting Started";
-            this.lblGettingStarted.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlSpacer
-            // 
-            this.pnlSpacer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSpacer.Location = new System.Drawing.Point(5, 58);
-            this.pnlSpacer.Name = "pnlSpacer";
-            this.pnlSpacer.Size = new System.Drawing.Size(1014, 20);
-            this.pnlSpacer.TabIndex = 0;
+            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pcbLogo.Image = global::MonoGameHub.Properties.Resources.HorizontalLogo_512px;
+            this.pcbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(256, 53);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
             // 
             // HomeView
             // 
@@ -227,19 +227,20 @@
             this.Controls.Add(this.pnlSpacer);
             this.Controls.Add(this.pnlLogoWrapper);
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(1024, 683);
             this.MinimumSize = new System.Drawing.Size(1024, 683);
             this.Name = "HomeView";
-            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 30);
             this.Size = new System.Drawing.Size(1024, 683);
             this.pnlLogoWrapper.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.pnlGettingStartedList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

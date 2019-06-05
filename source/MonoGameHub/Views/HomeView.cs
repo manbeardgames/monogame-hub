@@ -62,7 +62,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
@@ -73,7 +73,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
@@ -84,7 +84,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
@@ -95,7 +95,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
@@ -106,7 +106,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
@@ -117,7 +117,7 @@ namespace MonoGameHub.Views
             {
                 ButtonWithContent button = new ButtonWithContent();
                 button.BackColor = Color.Transparent;
-                button.Size = new Size(468, 75);
+                button.Size = new Size(450, 75);
                 button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
                 button.TitleText = project.Name;
                 button.DescriptionText = project.PathToSolution;
