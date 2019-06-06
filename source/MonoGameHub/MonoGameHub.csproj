@@ -159,6 +159,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Templates\DesktopGL\AssemblyInfo.cs.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Content.mgcb.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Game1.cs.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Program.cs.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\ProjectTemplate.csproj.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\SolutionTemplate.sln.template" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -176,6 +182,8 @@
     <None Include="Resources\file-document-box-multiple-outline.png" />
     <None Include="Resources\lightbulb-on-outline.png" />
     <None Include="Resources\file-document-box-plus-outline.png" />
+    <EmbeddedResource Include="Templates\DesktopGL\Icon.bmp" />
+    <EmbeddedResource Include="Templates\DesktopGL\Icon.ico" />
     <Content Include="vswhere.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
