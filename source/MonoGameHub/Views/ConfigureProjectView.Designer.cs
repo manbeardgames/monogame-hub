@@ -284,6 +284,7 @@
             this.btnCreate.TabIndex = 3;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // ConfigureProjectView
             // 

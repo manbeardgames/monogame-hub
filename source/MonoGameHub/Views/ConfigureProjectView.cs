@@ -13,6 +13,11 @@ namespace MonoGameHub.Views
         /// </summary>
         public event EventHandler Back;
 
+        /// <summary>
+        ///     Occurs when the <see cref="btnCreate"/> control is clicked
+        /// </summary>
+        public event EventHandler Create;
+
 
 
 
@@ -49,12 +54,6 @@ namespace MonoGameHub.Views
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventArgs e = new PropertyChangedEventArgs(propertyName);
-            PropertyChanged?.Invoke(this, e);
-        }
 
         private void TxtProjectName_TextChanged(object sender, EventArgs e)
         {
@@ -96,6 +95,11 @@ namespace MonoGameHub.Views
             enable = !string.IsNullOrWhiteSpace(txtSolutionName.Text);
             btnCreate.Enabled = enable;
 
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+            Create?.Invoke(this, null);
         }
     }
 }
