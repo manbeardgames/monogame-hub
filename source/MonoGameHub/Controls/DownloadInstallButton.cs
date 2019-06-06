@@ -28,6 +28,7 @@ namespace MonoGameHub.Controls
 
         public void Initialize()
         {
+            DeleteTempFile();
             _isDownloading = false;
 
             progressBar.Value = 0;
@@ -210,6 +211,15 @@ namespace MonoGameHub.Controls
                 Program.Log.Error(message);
                 MessageBox.Show($"{message}  Please try downloading again");
                 Initialize();
+            }
+        }
+
+        private void DeleteTempFile()
+        {
+            //  Delete the temp file
+            if (File.Exists(Path.Combine(Path.GetTempPath(), "monogamesetup.exe")))
+            {
+                File.Delete(Path.Combine(Path.GetTempPath(), "monogamesetup.exe"));
             }
         }
     }
