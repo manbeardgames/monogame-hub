@@ -31,14 +31,17 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pnlContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(44, 6);
+            this.lblTitle.Location = new System.Drawing.Point(42, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(40, 19);
@@ -50,11 +53,12 @@
             // 
             // lblDescription
             // 
+            this.lblDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDescription.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(46, 31);
+            this.lblDescription.Location = new System.Drawing.Point(42, 19);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(378, 50);
+            this.lblDescription.Size = new System.Drawing.Size(406, 53);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "label1";
             this.lblDescription.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TriggerMouseCLick);
@@ -63,32 +67,44 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox.Size = new System.Drawing.Size(42, 72);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TriggerMouseCLick);
             this.pictureBox.MouseEnter += new System.EventHandler(this.TriggerMouseEnter);
             this.pictureBox.MouseLeave += new System.EventHandler(this.TriggerMouseLeave);
             // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Controls.Add(this.lblDescription);
+            this.pnlContainer.Controls.Add(this.lblTitle);
+            this.pnlContainer.Controls.Add(this.pictureBox);
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(10, 10);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(448, 72);
+            this.pnlContainer.TabIndex = 3;
+            // 
             // ButtonWithContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.pnlContainer);
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ButtonWithContent";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(468, 92);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -97,5 +113,6 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Panel pnlContainer;
     }
 }
