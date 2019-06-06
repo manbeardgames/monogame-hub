@@ -160,12 +160,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Templates\DesktopGL\AssemblyInfo.cs.template" />
-    <EmbeddedResource Include="Templates\DesktopGL\Content.mgcb.template" />
-    <EmbeddedResource Include="Templates\DesktopGL\Game1.cs.template" />
-    <EmbeddedResource Include="Templates\DesktopGL\Program.cs.template" />
-    <EmbeddedResource Include="Templates\DesktopGL\ProjectTemplate.csproj.template" />
-    <EmbeddedResource Include="Templates\DesktopGL\SolutionTemplate.sln.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\AssemblyInfo.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Content.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Game1.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Program.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Project.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\Solution.template" />
+    <EmbeddedResource Include="Templates\DesktopGL\AppManifest.template" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
