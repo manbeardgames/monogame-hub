@@ -22,6 +22,9 @@ namespace MonoGameHub.Views
         /// </summary>
         public MonoGameProjectTemplate TemplateChoosen { get; set; }
 
+
+        private ButtonWithContent _selected;
+
         /// <summary>
         ///     Creates a new <see cref="ChooseTemplateView"/> instance
         /// </summary>
@@ -82,25 +85,6 @@ namespace MonoGameHub.Views
             }
         }
 
-
-        /// <summary>
-        ///     Sets all <see cref="ButtonWithContent"/> controls in the <see cref="pnlTemplateList"/> panel
-        ///     as not selected except the <paramref name="selectedButton"/> given
-        /// </summary>
-        /// <param name="selectedButton">The <see cref="ButtonWithContent"/> control to set selected</param>
-        private void SetButtonSelected(ButtonWithContent selectedButton)
-        {
-            foreach (ButtonWithContent button in pnlTemplateList.Controls)
-            {
-                button.IsSelected = false;
-                button.BackColor = Color.FromArgb(51, 51, 55);
-            }
-
-            selectedButton.IsSelected = true;
-            selectedButton.BackColor = Color.FromArgb(230, 60, 0);
-
-        }
-
         /// <summary>
         ///     Handles the MouseClick event for the <see cref="btnWindowsProject"/> control
         /// </summary>
@@ -108,11 +92,8 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnWindowsProject_MouseClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.Windows;
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.Windows;
         }
 
         /// <summary>
@@ -122,13 +103,13 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnWindowsProject_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.Windows;
-                Next?.Invoke(this, null);
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.Windows;
+            Next?.Invoke(this, null);
+
         }
+
+
 
         /// <summary>
         ///     Handles the MouseClick event for the <see cref="btnAndroid"/> control
@@ -137,11 +118,9 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnAndroid_MouseClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.Android;
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.Android;
+            
         }
 
         /// <summary>
@@ -151,12 +130,9 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnAndroid_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.Android;
-                Next?.Invoke(this, null);
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.Android;
+            Next?.Invoke(this, null);
         }
 
         /// <summary>
@@ -166,11 +142,8 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnCrossPlatform_MouseClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.CrossPlatform;
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.CrossPlatform;
         }
 
         /// <summary>
@@ -180,12 +153,9 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnCrossPlatform_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.CrossPlatform;
-                Next?.Invoke(this, null);
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.CrossPlatform;
+            Next?.Invoke(this, null);
         }
 
         /// <summary>
@@ -195,11 +165,8 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnIos_MouseClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.IOS;
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.IOS;
         }
 
         /// <summary>
@@ -209,12 +176,24 @@ namespace MonoGameHub.Views
         /// <param name="e"></param>
         private void BtnIos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (sender is ButtonWithContent btn)
-            {
-                SetButtonSelected(btn);
-                TemplateChoosen = MonoGameProjectTemplate.IOS;
-                Next?.Invoke(this, null);
-            }
+            SetSelected(sender as ButtonWithContent);
+            TemplateChoosen = MonoGameProjectTemplate.IOS;
+            Next?.Invoke(this, null);
         }
+
+
+        private void SetSelected(ButtonWithContent control)
+        {
+            if (_selected == control) { return; }
+            if (_selected != null)
+            {
+                _selected.BackColor = Color.FromArgb(51, 51, 55);
+                _selected.IsSelected = false;
+            }
+            _selected = control;
+            _selected.IsSelected = true;
+            _selected.BackColor = Color.FromArgb(230, 60, 0);
+        }
+
     }
 }
