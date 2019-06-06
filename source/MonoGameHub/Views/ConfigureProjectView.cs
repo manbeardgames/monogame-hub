@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MonoGameHub.Models;
+using System;
+using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MonoGameHub.Views
@@ -11,12 +14,16 @@ namespace MonoGameHub.Views
         public event EventHandler Back;
 
 
+
+
         /// <summary>
         ///     Creates a new <see cref="ConfigureProjectView"/> instance
         /// </summary>
         public ConfigureProjectView()
         {
             InitializeComponent();
+
+            txtLocation.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         }
 
         /// <summary>
@@ -27,6 +34,68 @@ namespace MonoGameHub.Views
         private void BtnBack_MouseClick(object sender, MouseEventArgs e)
         {
             Back?.Invoke(this, null);
+        }
+
+        private void BtnBrowse_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog())
+            {
+                fbd.RootFolder = Environment.SpecialFolder.MyDocuments;
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    txtLocation.Text = fbd.SelectedPath;
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventArgs e = new PropertyChangedEventArgs(propertyName);
+            PropertyChanged?.Invoke(this, e);
+        }
+
+        private void TxtProjectName_TextChanged(object sender, EventArgs e)
+        {
+            if (chkShareName.Checked)
+            {
+                txtSolutionName.Text = txtProjectName.Text;
+            }
+
+            EnableCreateButton();
+        }
+
+        private void ChkShareName_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkShareName.Checked)
+            {
+                txtSolutionName.Text = txtProjectName.Text;
+                txtSolutionName.Enabled = false;
+            }
+            else
+            {
+                txtSolutionName.Enabled = true;
+            }
+        }
+
+        private void TxtLocation_TextChanged(object sender, EventArgs e)
+        {
+            EnableCreateButton();
+        }
+
+        private void TxtSolutionName_TextChanged(object sender, EventArgs e)
+        {
+            EnableCreateButton();
+        }
+
+        private void EnableCreateButton()
+        {
+            bool enable = !string.IsNullOrWhiteSpace(txtProjectName.Text);
+            enable = !string.IsNullOrWhiteSpace(txtLocation.Text);
+            enable = !string.IsNullOrWhiteSpace(txtSolutionName.Text);
+            btnCreate.Enabled = enable;
+
         }
     }
 }

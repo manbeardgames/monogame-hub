@@ -193,6 +193,10 @@ namespace MonoGameHub.Views
             _selected = control;
             _selected.IsSelected = true;
             _selected.BackColor = Color.FromArgb(230, 60, 0);
+            if(!btnNext.Enabled)
+            {
+                btnNext.Enabled = true;
+            }
         }
 
     }

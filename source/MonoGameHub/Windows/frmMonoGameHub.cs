@@ -1,4 +1,5 @@
-﻿using MonoGameHub.Views;
+﻿using MonoGameHub.Models;
+using MonoGameHub.Views;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace MonoGameHub.Windows
 
         private ChooseTemplateView _chooseTemplateView;
         private ConfigureProjectView _configureProjectView;
+
+        private ProjectModel _newProject = new ProjectModel();
 
         /// <summary>
         ///     Creates a new <see cref="frmMonoGameHub"/> instance
@@ -54,6 +57,7 @@ namespace MonoGameHub.Windows
             _chooseTemplateView.Next += (_, e) =>
             {
                 pnlContentRegion.Controls.Remove(_chooseTemplateView);
+                _newProject.ProjectType = _chooseTemplateView.TemplateChoosen;
                 pnlContentRegion.Controls.Add(_configureProjectView);
 
             };

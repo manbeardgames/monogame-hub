@@ -35,23 +35,23 @@
             this.pnlProjectName = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLocation = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLocation = new System.Windows.Forms.Label();
+            this.pnlLocationInner = new System.Windows.Forms.FlowLayoutPanel();
             this.txtLocation = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.pnlSolutionName = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSolutionName = new System.Windows.Forms.Label();
             this.txtSolutionName = new System.Windows.Forms.TextBox();
-            this.chkSameName = new System.Windows.Forms.CheckBox();
-            this.chkSameFolder = new System.Windows.Forms.CheckBox();
-            this.pnlLocationInner = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBrowse = new System.Windows.Forms.Button();
+            this.chkShareName = new System.Windows.Forms.CheckBox();
+            this.chkShareDirectory = new System.Windows.Forms.CheckBox();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlSpacer = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlProjectName.SuspendLayout();
             this.pnlLocation.SuspendLayout();
-            this.pnlSolutionName.SuspendLayout();
             this.pnlLocationInner.SuspendLayout();
+            this.pnlSolutionName.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,12 +91,14 @@
             this.txtProjectName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
             this.txtProjectName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProjectName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtProjectName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProjectName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProjectName.ForeColor = System.Drawing.Color.White;
             this.txtProjectName.Location = new System.Drawing.Point(3, 24);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(391, 27);
+            this.txtProjectName.Size = new System.Drawing.Size(391, 23);
             this.txtProjectName.TabIndex = 1;
+            this.txtProjectName.Text = "MyGame";
+            this.txtProjectName.TextChanged += new System.EventHandler(this.TxtProjectName_TextChanged);
             // 
             // pnlProjectName
             // 
@@ -132,24 +134,50 @@
             this.lblLocation.TabIndex = 0;
             this.lblLocation.Text = "Location";
             // 
+            // pnlLocationInner
+            // 
+            this.pnlLocationInner.Controls.Add(this.txtLocation);
+            this.pnlLocationInner.Controls.Add(this.btnBrowse);
+            this.pnlLocationInner.Location = new System.Drawing.Point(3, 24);
+            this.pnlLocationInner.Name = "pnlLocationInner";
+            this.pnlLocationInner.Size = new System.Drawing.Size(873, 36);
+            this.pnlLocationInner.TabIndex = 2;
+            // 
             // txtLocation
             // 
             this.txtLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
             this.txtLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLocation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtLocation.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Enabled = false;
+            this.txtLocation.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLocation.ForeColor = System.Drawing.Color.White;
             this.txtLocation.Location = new System.Drawing.Point(3, 3);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(391, 27);
+            this.txtLocation.ReadOnly = true;
+            this.txtLocation.Size = new System.Drawing.Size(391, 23);
             this.txtLocation.TabIndex = 1;
+            this.txtLocation.TextChanged += new System.EventHandler(this.TxtLocation_TextChanged);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
+            this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Location = new System.Drawing.Point(400, 3);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(37, 27);
+            this.btnBrowse.TabIndex = 2;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
             // 
             // pnlSolutionName
             // 
             this.pnlSolutionName.Controls.Add(this.lblSolutionName);
             this.pnlSolutionName.Controls.Add(this.txtSolutionName);
-            this.pnlSolutionName.Controls.Add(this.chkSameName);
-            this.pnlSolutionName.Controls.Add(this.chkSameFolder);
+            this.pnlSolutionName.Controls.Add(this.chkShareName);
+            this.pnlSolutionName.Controls.Add(this.chkShareDirectory);
             this.pnlSolutionName.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSolutionName.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnlSolutionName.Location = new System.Drawing.Point(30, 195);
@@ -174,64 +202,46 @@
             this.txtSolutionName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
             this.txtSolutionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSolutionName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtSolutionName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSolutionName.Enabled = false;
+            this.txtSolutionName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolutionName.ForeColor = System.Drawing.Color.White;
             this.txtSolutionName.Location = new System.Drawing.Point(3, 24);
             this.txtSolutionName.Name = "txtSolutionName";
-            this.txtSolutionName.Size = new System.Drawing.Size(391, 27);
+            this.txtSolutionName.Size = new System.Drawing.Size(391, 23);
             this.txtSolutionName.TabIndex = 1;
+            this.txtSolutionName.Text = "MyGame";
+            this.txtSolutionName.TextChanged += new System.EventHandler(this.TxtSolutionName_TextChanged);
             // 
-            // chkSameName
+            // chkShareName
             // 
-            this.chkSameName.AutoSize = true;
-            this.chkSameName.Checked = true;
-            this.chkSameName.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSameName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSameName.Location = new System.Drawing.Point(3, 57);
-            this.chkSameName.Name = "chkSameName";
-            this.chkSameName.Size = new System.Drawing.Size(271, 20);
-            this.chkSameName.TabIndex = 2;
-            this.chkSameName.Text = "Solution and project share the same name";
-            this.chkSameName.UseVisualStyleBackColor = true;
+            this.chkShareName.AutoSize = true;
+            this.chkShareName.Checked = true;
+            this.chkShareName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShareName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShareName.Location = new System.Drawing.Point(3, 53);
+            this.chkShareName.Name = "chkShareName";
+            this.chkShareName.Size = new System.Drawing.Size(271, 20);
+            this.chkShareName.TabIndex = 2;
+            this.chkShareName.Text = "Solution and project share the same name";
+            this.chkShareName.UseVisualStyleBackColor = true;
+            this.chkShareName.CheckedChanged += new System.EventHandler(this.ChkShareName_CheckedChanged);
             // 
-            // chkSameFolder
+            // chkShareDirectory
             // 
-            this.chkSameFolder.AutoSize = true;
-            this.chkSameFolder.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSameFolder.Location = new System.Drawing.Point(3, 83);
-            this.chkSameFolder.Name = "chkSameFolder";
-            this.chkSameFolder.Size = new System.Drawing.Size(299, 20);
-            this.chkSameFolder.TabIndex = 3;
-            this.chkSameFolder.Text = "Place solution and project in the same directory";
-            this.chkSameFolder.UseVisualStyleBackColor = true;
-            // 
-            // pnlLocationInner
-            // 
-            this.pnlLocationInner.Controls.Add(this.txtLocation);
-            this.pnlLocationInner.Controls.Add(this.btnBrowse);
-            this.pnlLocationInner.Location = new System.Drawing.Point(3, 24);
-            this.pnlLocationInner.Name = "pnlLocationInner";
-            this.pnlLocationInner.Size = new System.Drawing.Size(873, 36);
-            this.pnlLocationInner.TabIndex = 2;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
-            this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
-            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(400, 3);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(37, 27);
-            this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.chkShareDirectory.AutoSize = true;
+            this.chkShareDirectory.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShareDirectory.Location = new System.Drawing.Point(3, 79);
+            this.chkShareDirectory.Name = "chkShareDirectory";
+            this.chkShareDirectory.Size = new System.Drawing.Size(299, 20);
+            this.chkShareDirectory.TabIndex = 3;
+            this.chkShareDirectory.Text = "Place solution and project in the same directory";
+            this.chkShareDirectory.UseVisualStyleBackColor = true;
             // 
             // pnlFooter
             // 
             this.pnlFooter.Controls.Add(this.btnBack);
             this.pnlFooter.Controls.Add(this.pnlSpacer);
-            this.pnlFooter.Controls.Add(this.btnNext);
+            this.pnlFooter.Controls.Add(this.btnCreate);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.Location = new System.Drawing.Point(30, 618);
             this.pnlFooter.Name = "pnlFooter";
@@ -261,19 +271,19 @@
             this.pnlSpacer.Size = new System.Drawing.Size(14, 35);
             this.pnlSpacer.TabIndex = 3;
             // 
-            // btnNext
+            // btnCreate
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(864, 0);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(100, 35);
-            this.btnNext.TabIndex = 3;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(58)))));
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(864, 0);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(100, 35);
+            this.btnCreate.TabIndex = 3;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // ConfigureProjectView
             // 
@@ -287,7 +297,7 @@
             this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(1024, 683);
             this.MinimumSize = new System.Drawing.Size(1024, 683);
             this.Name = "ConfigureProjectView";
@@ -298,10 +308,10 @@
             this.pnlProjectName.PerformLayout();
             this.pnlLocation.ResumeLayout(false);
             this.pnlLocation.PerformLayout();
-            this.pnlSolutionName.ResumeLayout(false);
-            this.pnlSolutionName.PerformLayout();
             this.pnlLocationInner.ResumeLayout(false);
             this.pnlLocationInner.PerformLayout();
+            this.pnlSolutionName.ResumeLayout(false);
+            this.pnlSolutionName.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -320,13 +330,13 @@
         private System.Windows.Forms.FlowLayoutPanel pnlSolutionName;
         private System.Windows.Forms.Label lblSolutionName;
         private System.Windows.Forms.TextBox txtSolutionName;
-        private System.Windows.Forms.CheckBox chkSameName;
-        private System.Windows.Forms.CheckBox chkSameFolder;
+        private System.Windows.Forms.CheckBox chkShareName;
+        private System.Windows.Forms.CheckBox chkShareDirectory;
         private System.Windows.Forms.FlowLayoutPanel pnlLocationInner;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel pnlSpacer;
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
