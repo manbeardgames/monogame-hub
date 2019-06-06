@@ -37,11 +37,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(44, 6);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(52, 25);
+            this.lblTitle.Size = new System.Drawing.Size(40, 19);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Title";
             this.lblTitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TriggerMouseCLick);
@@ -73,7 +73,7 @@
             this.pictureBox.MouseEnter += new System.EventHandler(this.TriggerMouseEnter);
             this.pictureBox.MouseLeave += new System.EventHandler(this.TriggerMouseLeave);
             // 
-            // ButtonWIthContent
+            // ButtonWithContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "ButtonWIthContent";
+            this.Name = "ButtonWithContent";
             this.Size = new System.Drawing.Size(468, 92);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
