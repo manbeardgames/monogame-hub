@@ -76,6 +76,7 @@
     <Compile Include="Controls\DownloadInstallButton.Designer.cs">
       <DependentUpon>DownloadInstallButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewProjectEventArgs.cs" />
     <Compile Include="MonoGameProjectTemplate.cs" />
     <Compile Include="MonoGameInstallType.cs" />
     <Compile Include="Views\ChooseTemplateView.cs">

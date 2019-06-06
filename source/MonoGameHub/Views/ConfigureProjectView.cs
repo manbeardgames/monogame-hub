@@ -16,7 +16,8 @@ namespace MonoGameHub.Views
         /// <summary>
         ///     Occurs when the <see cref="btnCreate"/> control is clicked
         /// </summary>
-        public event EventHandler Create;
+        public event CreateEventHandler Create;
+        public delegate void CreateEventHandler(object sender, CreateNewProjectEventArgs e);
 
 
 
@@ -99,7 +100,18 @@ namespace MonoGameHub.Views
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            Create?.Invoke(this, null);
+            CreateEventHandler handler = Create;
+            if(handler != null)
+            {
+                CreateNewProjectEventArgs args = new CreateNewProjectEventArgs()
+                {
+                    ProjectName = txtProjectName.Text,
+                    SolutionName = txtSolutionName.Text,
+                    Directory = txtLocation.Text,
+                    ShareDirectory = chkShareDirectory.Checked
+                };
+                handler(this, args);
+            }
         }
     }
 }
