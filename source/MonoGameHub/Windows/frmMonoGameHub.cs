@@ -13,10 +13,20 @@ namespace MonoGameHub.Windows
         ///     in the <see cref="pnlContentRegion"/> panel
         /// </summary>
         private HomeView _homeView;
-
+        
+        /// <summary>
+        ///     Reference to the <see cref="ChooseTemplateView"/> control that is displayed
+        ///     in the <see cref="pnlContentRegion"/> panel
+        /// </summary>
         private ChooseTemplateView _chooseTemplateView;
+
+        /// <summary>
+        ///     Reference to the <see cref="ConfigureProjectView"/> control that is displayed
+        ///     in the <see cref="pnlContentRegion"/> panel
+        /// </summary>
         private ConfigureProjectView _configureProjectView;
 
+        //  Refrence for building a new project
         private ProjectModel _newProject = new ProjectModel();
 
         /// <summary>
