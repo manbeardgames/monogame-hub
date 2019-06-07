@@ -68,61 +68,6 @@ namespace MonoGameHub.Views
                 button.DescriptionText = project.PathToSolution;
                 pnlProjectList.Controls.Add(button);
             }
-
-            foreach (var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(450, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
-
-            foreach (var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(450, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
-
-            foreach (var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(450, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
-
-            foreach (var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(450, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
-
-            foreach (var project in projects)
-            {
-                ButtonWithContent button = new ButtonWithContent();
-                button.BackColor = Color.Transparent;
-                button.Size = new Size(450, 75);
-                button.Logo = MonoGameHub.Properties.Resources.file_document_box_multiple_outline;
-                button.TitleText = project.Name;
-                button.DescriptionText = project.PathToSolution;
-                pnlProjectList.Controls.Add(button);
-            }
         }
 
         /// <summary>
