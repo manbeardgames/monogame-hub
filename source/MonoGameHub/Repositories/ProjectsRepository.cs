@@ -24,27 +24,10 @@ namespace MonoGameHub.Repositories
                 PathToSolution = @"C:\Users\ManBeardGames\Desktop\projects\Ophidian\Ophidian.sln"
             };
 
-            ProjectModel projectTwo = new ProjectModel()
-            {
-                Name = "Echo",
-                SolutionName = "Echo",
-                PathToProject = @"C:\Users\ManBeardGames\Desktop\projects\Echo\Echo\Echo.csproj",
-                PathToSolution = @"C:\Users\ManBeardGames\Desktop\projects\Echo\Echo.sln"
-            };
-
-            ProjectModel projectThree = new ProjectModel()
-            {
-                Name = "ManBeardvsManBear",
-                SolutionName = "ManBeardvsManBear",
-                PathToProject = @"C:\Users\ManBeardGames\Desktop\projects\ManBeardvsManBear\ManBeardvsManBear\ManBeardvsManBear.csproj",
-                PathToSolution = @"C:\Users\ManBeardGames\Desktop\projects\ManBeardvsManBear\ManBeardvsManBear.sln"
-            };
 
             List<ProjectModel> projects = new List<ProjectModel>()
             {
-                projectOne,
-                projectTwo,
-                projectThree
+                projectOne
             };
 
             return projects;
