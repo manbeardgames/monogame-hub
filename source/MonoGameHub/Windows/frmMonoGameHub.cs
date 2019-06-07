@@ -1,6 +1,7 @@
 ﻿using MonoGameHub.Models;
 using MonoGameHub.Views;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -398,6 +399,11 @@ namespace MonoGameHub.Windows
                     stream.CopyTo(fileStream);
                 }
             }
+
+            ProcessStartInfo loadSolution = new ProcessStartInfo(Path.Combine(rootDirectory, $"{project.SolutionName}.sln"));
+            loadSolution.UseShellExecute = true;
+            Process.Start(loadSolution);
+            Application.Exit();
 
 
 
