@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -186,6 +189,7 @@
     <None Include="Resources\file-document-box-plus-outline.png" />
     <EmbeddedResource Include="Templates\DesktopGL\Icon.bmp" />
     <EmbeddedResource Include="Templates\DesktopGL\Icon.ico" />
+    <None Include="Resources\Icon.ico" />
     <Content Include="vswhere.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
